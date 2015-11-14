@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35051D801BF74CF3003C0A27 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35051D7F1BF74CF3003C0A27 /* EventsViewController.swift */; };
+		35051D821BF75053003C0A27 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35051D811BF75053003C0A27 /* Event.swift */; };
+		35051D861BF75192003C0A27 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35051D851BF75192003C0A27 /* EventsTableViewCell.swift */; };
 		35748F931BF736E900E6E62A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35748F921BF736E900E6E62A /* AppDelegate.swift */; };
 		35748F961BF736E900E6E62A /* meetUp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 35748F941BF736E900E6E62A /* meetUp.xcdatamodeld */; };
 		35748F981BF736E900E6E62A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35748F971BF736E900E6E62A /* ViewController.swift */; };
@@ -27,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		35051D7F1BF74CF3003C0A27 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		35051D811BF75053003C0A27 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		35051D851BF75192003C0A27 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		35748F8D1BF736E900E6E62A /* meetUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meetUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35748F911BF736E900E6E62A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35748F921BF736E900E6E62A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +87,7 @@
 			children = (
 				35748F921BF736E900E6E62A /* AppDelegate.swift */,
 				35748F971BF736E900E6E62A /* ViewController.swift */,
+				3577F1091BF73FBE005F21BC /* EventsTable */,
 				35748F991BF736E900E6E62A /* Main.storyboard */,
 				35748F9C1BF736EA00E6E62A /* Images.xcassets */,
 				35748F9E1BF736EA00E6E62A /* LaunchScreen.xib */,
@@ -113,6 +120,16 @@
 				35748FAA1BF736EA00E6E62A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3577F1091BF73FBE005F21BC /* EventsTable */ = {
+			isa = PBXGroup;
+			children = (
+				35051D7F1BF74CF3003C0A27 /* EventsViewController.swift */,
+				35051D851BF75192003C0A27 /* EventsTableViewCell.swift */,
+				35051D811BF75053003C0A27 /* Event.swift */,
+			);
+			name = EventsTable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,7 +176,9 @@
 		35748F851BF736E900E6E62A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastSwiftMigration = 0710;
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Wayne;
 				TargetAttributes = {
 					35748F8C1BF736E900E6E62A = {
@@ -216,8 +235,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				35748F981BF736E900E6E62A /* ViewController.swift in Sources */,
+				35051D801BF74CF3003C0A27 /* EventsViewController.swift in Sources */,
 				35748F931BF736E900E6E62A /* AppDelegate.swift in Sources */,
 				35748F961BF736E900E6E62A /* meetUp.xcdatamodeld in Sources */,
+				35051D861BF75192003C0A27 /* EventsTableViewCell.swift in Sources */,
+				35051D821BF75053003C0A27 /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +301,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -342,6 +365,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = meetUp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Chi.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -352,6 +376,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = meetUp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Chi.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -370,6 +395,7 @@
 				);
 				INFOPLIST_FILE = meetUpTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Chi.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/meetUp.app/meetUp";
 			};
@@ -385,6 +411,7 @@
 				);
 				INFOPLIST_FILE = meetUpTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Chi.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/meetUp.app/meetUp";
 			};
@@ -409,6 +436,7 @@
 				35748FB11BF736EA00E6E62A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		35748FB21BF736EA00E6E62A /* Build configuration list for PBXNativeTarget "meetUpTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +445,7 @@
 				35748FB41BF736EA00E6E62A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
