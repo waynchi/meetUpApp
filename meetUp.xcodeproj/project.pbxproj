@@ -14,6 +14,7 @@
 		35748F9D1BF736EA00E6E62A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35748F9C1BF736EA00E6E62A /* Images.xcassets */; };
 		35748FA01BF736EA00E6E62A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35748F9E1BF736EA00E6E62A /* LaunchScreen.xib */; };
 		35748FAC1BF736EA00E6E62A /* meetUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35748FAB1BF736EA00E6E62A /* meetUpTests.swift */; };
+		3F99C4361BF759F50055C48C /* AddEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F99C4351BF759F50055C48C /* AddEventTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		35748FA51BF736EA00E6E62A /* meetUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = meetUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35748FAA1BF736EA00E6E62A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35748FAB1BF736EA00E6E62A /* meetUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meetUpTests.swift; sourceTree = "<group>"; };
+		3F99C4351BF759F50055C48C /* AddEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				35748F9E1BF736EA00E6E62A /* LaunchScreen.xib */,
 				35748F941BF736E900E6E62A /* meetUp.xcdatamodeld */,
 				35748F901BF736E900E6E62A /* Supporting Files */,
+				3F99C4351BF759F50055C48C /* AddEventTableViewController.swift */,
 			);
 			path = meetUp;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			files = (
 				35748F981BF736E900E6E62A /* ViewController.swift in Sources */,
 				35748F931BF736E900E6E62A /* AppDelegate.swift in Sources */,
+				3F99C4361BF759F50055C48C /* AddEventTableViewController.swift in Sources */,
 				35748F961BF736E900E6E62A /* meetUp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +413,7 @@
 				35748FB11BF736EA00E6E62A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		35748FB21BF736EA00E6E62A /* Build configuration list for PBXNativeTarget "meetUpTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				35748FB41BF736EA00E6E62A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
