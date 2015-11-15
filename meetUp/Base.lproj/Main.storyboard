@@ -306,8 +306,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="29x-qF-SPK">
-                                <rect key="frame" x="100" y="100" width="400" height="400"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="29x-qF-SPK">
+                                <rect key="frame" x="16" y="64" width="568" height="536"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="29x-qF-SPK" secondAttribute="height" multiplier="1:1" id="LDT-sH-VDO"/>
                                     <constraint firstAttribute="height" constant="400" id="Lo7-ba-TeN"/>
@@ -321,12 +321,25 @@
                                     </mask>
                                 </variation>
                             </mapView>
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gIE-FY-TM4">
+                                <rect key="frame" x="-7" y="6" width="607" height="44"/>
+                                <items>
+                                    <navigationItem title="Select Location" id="44y-MU-cic">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="38w-TG-u0C"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="nYI-0T-Ser"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="gIE-FY-TM4" firstAttribute="top" secondItem="lDS-n1-yR2" secondAttribute="bottom" id="3Yi-2I-TuG"/>
                             <constraint firstItem="29x-qF-SPK" firstAttribute="leading" secondItem="wmR-oO-hpV" secondAttribute="leadingMargin" id="66c-gE-flG"/>
                             <constraint firstAttribute="centerX" secondItem="29x-qF-SPK" secondAttribute="centerX" id="80s-xQ-7Og"/>
                             <constraint firstAttribute="trailingMargin" secondItem="29x-qF-SPK" secondAttribute="trailing" id="JFC-ij-12x"/>
+                            <constraint firstAttribute="centerY" secondItem="gIE-FY-TM4" secondAttribute="centerY" id="NBU-Pc-UM3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gIE-FY-TM4" secondAttribute="trailing" id="T0Y-wn-ZHq"/>
+                            <constraint firstItem="gIE-FY-TM4" firstAttribute="leading" secondItem="wmR-oO-hpV" secondAttribute="leadingMargin" id="UyB-bQ-zO1"/>
                             <constraint firstAttribute="centerY" secondItem="29x-qF-SPK" secondAttribute="centerY" id="hVZ-Gy-DaJ"/>
                             <constraint firstItem="29x-qF-SPK" firstAttribute="top" secondItem="lDS-n1-yR2" secondAttribute="bottom" id="hye-co-7nf"/>
                             <constraint firstAttribute="centerY" secondItem="29x-qF-SPK" secondAttribute="centerY" id="kgi-oe-lat"/>
@@ -334,12 +347,17 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="80s-xQ-7Og"/>
+                                <exclude reference="hVZ-Gy-DaJ"/>
                                 <exclude reference="kgi-oe-lat"/>
+                                <exclude reference="NBU-Pc-UM3"/>
                             </mask>
                         </variation>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="MapCancelButton" destination="38w-TG-u0C" id="abS-MM-QaZ"/>
+                        <outlet property="MapDoneButton" destination="nYI-0T-Ser" id="xJD-WT-o8A"/>
                         <outlet property="MapView" destination="29x-qF-SPK" id="iG6-oR-e4p"/>
                     </connections>
                 </viewController>

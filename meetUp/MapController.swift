@@ -10,52 +10,94 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class MapController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate{
-
-    var locationManager = CLLocationManager()
-    var  startPin: MKPointAnnotation!
+class MapController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
     
+    @IBOutlet weak var MapDoneButton: UIBarButtonItem!
+    @IBOutlet weak var MapCancelButton: UIBarButtonItem!
+    
+    var locationManager:CLLocationManager!
+    var locationFixAchieved : Bool = false
+    var startPin: MKPointAnnotation!
     @IBOutlet weak var MapView: MKMapView!
     
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        /*
-        locationManager.delegate = self
+        
+        /* locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         */
         
-        //MapView.frame = self.view.bounds
+       
         
-        
-        
-      // startPin.coordinate = MapView.centerCoordinate
-        
-        MapView.addAnnotation(startPin)
         MapView.delegate = self
-        locationManager.delegate = self
         
+        locationFixAchieved = false
+        locationManager = CLLocationManager()
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+        
+        startPin = MKPointAnnotation()
+       
+        
+        
+        startPin.coordinate = CLLocationCoordinate2DMake(locationManager.location.coordinate.latitude, locationManager.location.coordinate.longitude)
+        MapView.addAnnotation(startPin)
+        
+        
+        
+        var coordinateRegion: MKCoordinateRegion
+        coordinateRegion = MKCoordinateRegion()
+        coordinateRegion.span.latitudeDelta = 0.02
+        coordinateRegion.span.longitudeDelta = 0.02
+        coordinateRegion.center = locationManager.location.coordinate
+        
+        MapView.setRegion(coordinateRegion, animated: true) // center mapview to user location
+        
+      //add pin image
+        var newPoint = self.MapView.convertCoordinate(MapView.centerCoordinate, toPointToView: self.view)
 
+        
+        var pinImage = UIImage(named: "Resources//red_pin.png")
+        var imageView = UIImageView(image: pinImage) // set as you want
+        
+        imageView.image = pinImage
+        imageView.backgroundColor = UIColor.clearColor()
+        imageView.contentMode = UIViewContentMode.Center
+        imageView.center.y = 50
+        imageView.center.x = 50
+        
+        
+        self.view.addSubview(imageView)
+        
+        
+        
+    }
+    func MapView(MapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
+        startPin.coordinate = MapView.centerCoordinate;
+        
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
