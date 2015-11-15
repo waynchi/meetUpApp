@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 
 
@@ -32,6 +33,12 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         events.append(event1);
         events.append(event2);
         events.append(event3);
+        
+        let testObject = PFObject(className: "TestObject")
+        testObject["foo"] = "bar"
+        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            print("Object has been saved.")
+        }
 
         // Do any additional setup after loading the view.
     }
