@@ -8,7 +8,20 @@
 
 import UIKit
 
-class AddEventTableViewController: UITableViewController {
+class AddEventTableViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate{
+    
+    @IBOutlet weak var NameTextField: UITextField!
+    
+    @IBOutlet weak var MoreInfoTextView: UITextView!
+    
+    @IBOutlet weak var NoPeopleScroll: UIPickerView!
+    
+    @IBOutlet weak var DoneButton: UIBarButtonItem!
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     
     
@@ -21,11 +34,25 @@ class AddEventTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         //var borderColor : UIColor = UIColor(red: 0.85, green: 0.85, blue: 0.85, alpha: 1.0)
-        /*
+        let tapGesture = UITapGestureRecognizer(target: self, action: "tap:")
+        view.addGestureRecognizer(tapGesture)
+        
         MoreInfoTextView.layer.borderWidth = 0.5
-        MoreInfoTextView.layer.borderColor = borderColor.CGColor
+        MoreInfoTextView.layer.borderColor = UIColor.grayColor().CGColor
         MoreInfoTextView.layer.cornerRadius = 5.0
-        */
+        MoreInfoTextView.delegate = self
+        
+        NameTextField.delegate = self
+        
+        
+        //NameTextField.returnKeyType = .Done
+        
+       // NoPeopleScroll.delegate = self
+        
+    }
+    func tap(gesture: UITapGestureRecognizer){
+        NameTextField.resignFirstResponder()
+        MoreInfoTextView.resignFirstResponder()
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,15 +63,15 @@ class AddEventTableViewController: UITableViewController {
     // MARK: - Table view data source
     /*
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
+    // #warning Potentially incomplete method implementation.
+    // Return the number of sections.
+    return 0
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
+    // #warning Incomplete method implementation.
+    // Return the number of rows in the section.
+    return 0
     }*/
     
     
